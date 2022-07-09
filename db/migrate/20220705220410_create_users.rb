@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[7.0] # rubocop:todo Style/Documentat
       t.string :name
       t.text :photo
       t.text :bio
-      t.integer :posts_counter
+      t.integer :posts_counter, default: 0
 
       t.timestamps
     end
