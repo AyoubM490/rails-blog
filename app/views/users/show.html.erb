@@ -1,0 +1,26 @@
+<div class="users">
+    <div>
+        <%= render @user %>
+    </div>
+
+    <div class="user-bio">
+        <h4>Bio</h4>
+        <p>
+            <%= @user.bio %>
+        </p>
+    </div>
+
+    <div>
+        <% @posts.each_with_index do |post, index| %>
+            <%= render partial: "posts/post", locals: { user: @user, post: post, index: index } %>
+        <% end %>
+    </div>
+
+    <button type="button">
+        <%= link_to "See all posts", user_posts_path(@user) %>
+    </button>
+
+    <%= form_with model: User.new, url: destroy_user_session_path, method: :delete do %>
+        <button>Sign out</button>
+    <% end %>
+</div>
