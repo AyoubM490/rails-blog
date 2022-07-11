@@ -1,0 +1,12 @@
+<div>
+    <%= render partial: "post_details", locals: { post: @post } %>
+</div>
+<div>
+    <ul>
+        <% @post.comments.each do |comment| %>
+            <li>
+                
+            </li>
+        <% end %>
+    </ul>
+</div>

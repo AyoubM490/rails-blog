@@ -1,0 +1,10 @@
+<div>
+    <%= render partial: "users/user", locals: { user: @user } %>
+</div>
+
+<div>
+    <% @posts.each_with_index do |post, index| %>
+        <%= render partial: "post", locals: { user: @user, post: post, index: index } %>
+            
+    <% end %>
+</div>
