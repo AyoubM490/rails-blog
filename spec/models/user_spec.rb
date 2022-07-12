@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject = User.new(name: 'Jerry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from US.')
+  subject { User.new(name: 'Jerry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from US.', posts_counter: 0, email: 'test@email.com', password: '123456') }
 
   describe 'name' do
     before { subject.save }
@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
 
     it 'should have a name' do
       subject.name = 'Ahmed'
-      expect(subject).to_not be_valid
+      expect(subject).to be_valid
     end
   end
 
@@ -43,9 +43,9 @@ RSpec.describe User, type: :model do
 
       @post7 = Post.create(author: subject, title: 'Hello7', text: 'This is my post')
 
-      expect(subject.three_most_recent_posts.length).to eql(0)
-      expect(subject.three_most_recent_posts.first).to_not eql(@post7)
-      expect(subject.three_most_recent_posts.last).to_not eql(@post5)
+      expect(subject.most_recent_three_posts.length).to eql(3)
+      expect(subject.most_recent_three_posts.first).to eql(@post7)
+      expect(subject.most_recent_three_posts.last).to eql(@post5)
     end
   end
 end
