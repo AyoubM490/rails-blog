@@ -8,6 +8,7 @@ require "rails"
   active_record/railtie
   action_controller/railtie
   action_view/railtie
+  active_storage/engine
   action_mailer/railtie
   active_job/railtie
   rails/test_unit/railtie
