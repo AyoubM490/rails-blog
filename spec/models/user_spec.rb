@@ -29,19 +29,19 @@ RSpec.describe User, type: :model do
     before { subject.save }
 
     it 'should have return most recent three posts' do
-      @post1 = Post.create(author: subject, title: 'Hello1', text: 'This is my post')
+      @post1 = Post.create(user: subject, title: 'Hello1', text: 'This is my post')
 
-      @post2 = Post.create(author: subject, title: 'Hello2', text: 'This is my post')
+      @post2 = Post.create(user: subject, title: 'Hello2', text: 'This is my post')
 
-      @post3 = Post.create(author: subject, title: 'Hello3', text: 'This is my post')
+      @post3 = Post.create(user: subject, title: 'Hello3', text: 'This is my post')
 
-      @post4 = Post.create(author: subject, title: 'Hello4', text: 'This is my post')
+      @post4 = Post.create(user: subject, title: 'Hello4', text: 'This is my post')
 
-      @post5 = Post.create(author: subject, title: 'Hello5', text: 'This is my post')
+      @post5 = Post.create(user: subject, title: 'Hello5', text: 'This is my post')
 
-      @post6 = Post.create(author: subject, title: 'Hello6', text: 'This is my post')
+      @post6 = Post.create(user: subject, title: 'Hello6', text: 'This is my post')
 
-      @post7 = Post.create(author: subject, title: 'Hello7', text: 'This is my post')
+      @post7 = Post.create(user: subject, title: 'Hello7', text: 'This is my post')
 
       expect(subject.most_recent_three_posts.length).to eql(3)
       expect(subject.most_recent_three_posts.first).to eql(@post7)
