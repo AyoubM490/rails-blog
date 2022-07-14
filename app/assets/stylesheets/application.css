@@ -13,3 +13,164 @@
  *= require_tree .
  *= require_self
  */
+
+/* Style resets */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 3rem;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* post partial */
+
+.post {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+  border: 2px solid black;
+}
+
+.post h2 {
+  align-self: flex-start;
+  font-size: 1.25rem;
+  margin: 0.5rem;
+}
+
+.post p {
+  font-size: 1rem;
+}
+
+.post > small {
+  align-self: flex-end;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* User partial */
+
+.user {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.user .photo {
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  border: 2px solid black;
+  background-color: lightgrey;
+}
+
+.user .data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  height: 5rem;
+  border: 2px solid black;
+  background-color: lightgrey;
+}
+
+.user .data > h2 {
+  font-size: 2rem;
+}
+
+.user .data > small {
+  align-self: flex-end;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Users */
+.users {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-bio {
+  margin-top: 1rem;
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+.user-bio > h4 {
+  font-size: 1.25rem;
+  margin: 0.5rem;
+}
+
+.user-bio > p {
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+  align-self: center;
+  margin: 1rem;
+  font-size: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+/* Posts */
+
+.posts ul {
+  margin-top: 0.5rem;
+  background-color: rgb(193, 193, 193);
+  border: 2px solid black;
+}
+
+/* From */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 3rem auto;
+  width: 24rem;
+}
+
+input {
+  border: 2px solid black;
+  padding: 10px;
+  width: 100%;
+}
+
+.links-wrapper {
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 1rem;
+}
+
+.form-group > * {
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+}
