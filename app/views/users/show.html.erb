@@ -16,7 +16,4 @@
   <button type="button">
     <%= link_to "See all posts", user_posts_path(@user) %>
   </button>
-  <%= form_with model: User.new, url: destroy_user_session_path, method: :delete do %>
-    <button>Sign out</button>
-  <% end %>
 </div>
