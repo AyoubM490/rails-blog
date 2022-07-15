@@ -2,8 +2,13 @@
 
 Rails.application.routes.draw do
   default_url_options :host => "localhost:3000"
-  root 'users#index'
+  root "users#index"
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
+    resources :posts, only: [:index, :create, :new, :show]
+  end
+
+  resources :posts do
+    resources :comments, only: [:create, :new]
+    resources :likes, only: [:create]
   end
 end
