@@ -18,13 +18,12 @@ class PostsController < ApplicationController
     new_post = current_user.posts.new(post_params)
     new_post.likes_count = 0
     new_post.comments_count = 0
-    new_post.update_posts_count
     respond_to do |format|
       format.html do
         if new_post.save
-          redirect_to "/users/#{new_post.user.id}/posts/", notice: 'Success!'
+          redirect_to "/users/#{new_post.user.id}/posts/", notice: "Success!"
         else
-          render :new, alert: 'Error occured!'
+          render :new, alert: "Error occured!"
         end
       end
     end
