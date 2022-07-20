@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   before { @user = User.create(name: 'Jerry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from US.') }
-  subject { Post.new(user: @user, title: 'Hello1', text: 'This is my 1 post') }
+  subject { Post.create(user: @user, title: 'Hello1', text: 'This is my 1 post') }
 
   describe 'title' do
     before { subject.save }

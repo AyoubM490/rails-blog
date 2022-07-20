@@ -1,4 +1,4 @@
-require 'rails-helper'
+require 'rails_helper'
 
 describe 'Signing in', type: :feature do
   before do

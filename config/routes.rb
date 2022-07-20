@@ -1,14 +1,15 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  default_url_options :host => "localhost:3000"
+  devise_for :users
   root "users#index"
-  resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :create, :new, :show]
+  devise_scope :user do
+    get "/users/sign_out" => "devise/sessions#destroy"
   end
-
-  resources :posts do
-    resources :comments, only: [:create, :new]
-    resources :likes, only: [:create]
+  resources :users, only: [:index, :show] do
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do
+      resources :comments, only: [:create, :destroy]
+      resources :likes, only: [:create]
+    end
   end
 end
