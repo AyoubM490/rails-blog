@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'boot'
+require_relative "boot"
 
 require "rails"
 
@@ -27,6 +27,13 @@ module RailsBlog
   class Application < Rails::Application # rubocop:todo Style/Documentation
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+
+    config.debug_exception_response_format = :default
+    config.session_store :cookie_store, key: "_interslice_session"
+
+    config.middleware.use ActionDispatch::Flash
+
+    config.middleware.use config.session_store, config.session_options
 
     # Configuration for the application, engines, and railties goes here.
     #
