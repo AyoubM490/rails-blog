@@ -16,7 +16,7 @@ module Api
           end
         else
           respond_to do |format|
-            format.json { render json: "Wrong email or password".to_json, status: :ok }
+            format.json { render json: 'Wrong email or password'.to_json, status: :ok }
           end
         end
       end

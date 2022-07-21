@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def api_path
-    request.original_url.include?("api")
+    request.original_url.include?('api')
   end
 end
