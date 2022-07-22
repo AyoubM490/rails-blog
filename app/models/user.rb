@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: 'user_id', dependent: :destroy
   has_many :likes, foreign_key: 'user_id', dependent: :destroy
   has_many :comments, foreign_key: 'user_id', dependent: :destroy
-  after_create :generate_api_token
+  after_create :generate_confirmation_token
 
   def most_recent_three_posts
     Post.includes(:user).order(created_at: :desc).limit(3)
