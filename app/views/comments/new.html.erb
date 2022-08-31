@@ -1,8 +1,0 @@
-<div class="form">
-  <%= form_with model: @comment, url: user_post_comments_url, method: :post do |form| %>
-    <div class="form-group">
-      <%= form.text_field :text, :placeholder => "Text" %>
-      <%= form.submit "Submit" %>
-    </div>
-  <% end %>
-</div>

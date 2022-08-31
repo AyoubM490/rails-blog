@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsBlog</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BloggerApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'screen', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
-    <main>
-      <%= yield %>
-    </main>
-    <div>
-      <% flash.each do |type, msg| %>
-        <div class="alert alert-info">
-          <%= msg %>
-        </div>
-      <% end %>
-    </div>
+    <p class="flash"><%= flash.notice %></p>
+    <%= yield %>
   </body>
 </html>
